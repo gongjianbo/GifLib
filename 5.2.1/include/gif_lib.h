@@ -215,6 +215,14 @@ int DGifGetCodeNext(GifFileType *GifFile, GifByteType **GifCodeBlock);
 int DGifGetLZCodes(GifFileType *GifFile, int *GifCode);
 const char *DGifGetGifVersion(GifFileType *GifFile);
 
+/******************************************************************************
+ Color table quantization (5.2.0 removed. GongJianBo Reopen)
+******************************************************************************/
+int GifQuantizeBuffer(unsigned int Width, unsigned int Height,
+                   int *ColorMapSize, GifByteType * RedInput,
+                   GifByteType * GreenInput, GifByteType * BlueInput,
+                   GifByteType * OutputBuffer,
+                   GifColorType * OutputColorMap);
 
 /******************************************************************************
  Error handling and reporting.
